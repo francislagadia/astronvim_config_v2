@@ -200,7 +200,7 @@ local config = {
       --   },
       -- },
       pyright = {
-        single_filesupport = false,
+        single_file_support = false,
         settings = {
           python = {
             analysis = {
