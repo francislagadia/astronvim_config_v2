@@ -1,5 +1,5 @@
 # astronvim_config
-User configuration file for AstroNvim
+User configuration file for outdated AstroNvim v2
 
 
 Prerequisites:
