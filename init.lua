@@ -56,7 +56,7 @@ local config = {
       autoformat_enabled = true, -- enable or disable auto formatting at start (lsp.formatting.format_on_save must be enabled)
       cmp_enabled = true, -- enable completion at start
       autopairs_enabled = true, -- enable autopairs at start
-      diagnostics_enabled = false, -- enable diagnostics at start
+      diagnostics_enabled = true, -- enable diagnostics at start
       status_diagnostics_enabled = true, -- enable diagnostics in statusline
       icons_enabled = true, -- disable icons in the UI (disable if no nerd font is available, requires :PackerSync after changing)
       ui_notifications_enabled = true, -- disable notifications when toggling UI elements
@@ -71,6 +71,14 @@ local config = {
   --   local_vim.opt.shortmess = vim.opt.shortmess + { I = true } -- add to option list
   --
   --   return local_vim
+  -- end,
+  --
+  -- Re-enable netrw for editing over ssh
+  -- options = function(config)
+  --   config.g.loaded_netrwFileHandlers = nil
+  --   config.g.loaded_netrwPlugin = nil
+  --   config.g.loaded_netrwSettngs = nil
+  --   return config
   -- end,
 
   -- Set dashboard header
@@ -201,7 +209,7 @@ local config = {
       --   },
       -- },
       pyright = {
-        single_file_support = true,
+        single_file_support = false,
         settings = {
           python = {
             analysis = {
@@ -319,6 +327,9 @@ local config = {
             "**/*.py[a-zA-Z]"
           },
         },
+        hijack_netrw_behavior = "open_current",
+        -- for running netrw
+        -- hijack_netrw_behavior = "disabled",
       }
     },
     --
